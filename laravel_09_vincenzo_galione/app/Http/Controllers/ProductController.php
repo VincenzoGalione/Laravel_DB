@@ -30,6 +30,7 @@ class ProductController extends Controller
        $product->description = $description;
        $product->price = $price;
        $product->img = $img;
+       
 
        $product->save();
 

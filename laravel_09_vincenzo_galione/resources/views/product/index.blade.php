@@ -11,13 +11,17 @@
 
     <div class="container">
         <div class="row">
-            @foreach ($products as $product)
-                <div class="col-12 col-lg-4 col-md-6">
-                   <x-card
-                   :product="$product"
-                   /> 
-                </div>
-            @endforeach
+            @if ($products->count()== 0)  
+                <h2 class="text-center h2-custom vh-100 ">Non sono presenti prodotti</h2>
+            @else  
+                @foreach ($products as $product)
+                    <div class="col-12 col-lg-4 col-md-6">
+                    <x-card
+                    :product="$product"
+                    /> 
+                    </div>
+                @endforeach      
+            @endif
         </div>
     </div>
 
