@@ -40,8 +40,8 @@
                 </li>
                 <li class="nav-item">
                     <form  action="{{route('logout')}}" method="POST">
-                             @csrf
-                            <button class="nav-link" type="submit">Logout</button>
+                         @csrf
+                        <button class="nav-link" type="submit">Logout</button>
                     </form>
                 </li>
                 @endauth

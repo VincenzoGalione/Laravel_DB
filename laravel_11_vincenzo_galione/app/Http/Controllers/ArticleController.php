@@ -32,13 +32,17 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         //
-       
-        Article::create([
-            'title'=> $request->title,
-            'subtitle'=> $request->subtitle,
-            'body'=> $request->body,
-            'img'=> $request->file('img')->store('/public/img'),
-        ]);
+            $article = Article::create([
+                'title'=> $request->title,
+                'subtitle'=> $request->subtitle,
+                'body'=> $request->body,
+            ]);
+
+            if ($request->file('img')){
+                
+                $article->img = $request->file('img')->store('public/img');
+                $article->save();
+            }
 
         return redirect()->back()->with('message', 'articolo inserito con successo');
     }
@@ -58,6 +62,7 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         //
+        return view('article.edit', compact('article'));
     }
 
     /**
@@ -66,6 +71,22 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         //
+
+        if ($request->file('img')) {
+            $img = $request->file('img')->store('public/img');
+        }
+        else{
+            $img = $article->img;
+        }
+
+        $article->update([
+            'title'=> $request->title,
+            'subtitle'=> $request->subtitle,
+            'body'=> $request->body,
+            'img' => $img
+        ]);
+
+        return redirect(route('article.index'))->with('message', 'Articolo modificato');
     }
 
     /**
@@ -74,5 +95,8 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         //
+        $article->delete();
+
+        return redirect()->back()->with('message', 'articolo eliminato');
     }
 }
