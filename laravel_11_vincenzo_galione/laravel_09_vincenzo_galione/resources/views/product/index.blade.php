@@ -1,0 +1,30 @@
+<x-layout>
+    <header class="header">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100 align-content-center">
+                <div class="col-12 col-md-6 ">
+                    <h1 class="text-center">Articoli salvati</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            @if ($products->count()== 0)  
+                <p>Non sono presenti prodotti</p>
+            @else  
+                @foreach ($products as $product)
+                    <div class="col-12 col-lg-4 col-md-6">
+                    <x-card
+                    :product="$product"
+                    /> 
+                    </div>
+                @endforeach      
+            @endif
+        </div>
+    </div>
+
+
+
+</x-layout>
