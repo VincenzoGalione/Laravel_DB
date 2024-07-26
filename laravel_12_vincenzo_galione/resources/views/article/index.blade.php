@@ -12,13 +12,13 @@
     <x-display-message/>
     
 
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row ms-5">
             @if ($articles->count() == 0)
                 <h2 class="text-center h2-custom vh-100 ">Non sono presenti prodotti</h2>
             @else
                 @foreach ($articles as $article)
-                    <div class="col-12 col-lg-4 col-md-6">
+                    <div class="col-12  ps-0  col-lg-4 col-md-6 ">
                         <div class="card my-3" style="width: 18rem;">
                             @if (!Storage::exists($article->img))
                                 <img src="public/img/default.webp" class="card-img-top" alt="immmagine di default">
@@ -30,6 +30,15 @@
                                 <h5 class="card-title">{{ $article->title }}</h5>
                                 <p class="card-subtitle">{{ $article->subtitle }}</p>
                                 <p class="card-text">{{ $article->body }}</p>
+                                
+                                @if ($article->tags->isNotEmpty())  
+                                <div class="mb-3">
+                                    @foreach ($article->tags as $tag )   
+                                        <span class="badge text-bg-info">#{{$tag->name}}</span>
+                                    @endforeach
+                                </div>
+                                @endif
+                                
                                 <a href="{{route('article.show' , compact('article') )}}" class="btn btn-primary ">Dettaglio Articolo</a>
 
                                 @auth
