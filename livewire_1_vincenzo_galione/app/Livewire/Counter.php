@@ -28,7 +28,6 @@ class Counter extends Component
         $this->count-=$num;
     }
 
-
     public function render()
     {
         return view('livewire.counter');
