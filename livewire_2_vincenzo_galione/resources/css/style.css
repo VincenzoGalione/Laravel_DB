@@ -1,0 +1,16 @@
+.header{
+    height: 40vh;
+    background-color: rgb(22, 25, 223);
+    font-style: oblique;
+    color: rgb(0, 0, 0);
+}
+
+
+.card-custom{
+    background-color:rgb(22, 25, 223);
+    
+}
+
+.ancor:hover{
+    color: red;
+}
