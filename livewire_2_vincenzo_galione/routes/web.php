@@ -5,7 +5,11 @@ use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class,  'homepage'])->name('homepage');
+<<<<<<< HEAD
 
+=======
+Route::get('/posts', [PublicController::class,  'posts'])->name('posts');
+>>>>>>> 8d69d6fe72516e041a8ccf6d2ae4c9b6dcb76ec9
 
 //ArticleController
 

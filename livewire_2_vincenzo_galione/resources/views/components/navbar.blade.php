@@ -7,7 +7,14 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link active me-2" aria-current="page" href="{{route('homepage')}}">Home</a>
+=======
+            <a class="nav-link active me-2" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('posts')}}">Tutti i post</a>
+>>>>>>> 8d69d6fe72516e041a8ccf6d2ae4c9b6dcb76ec9
           </li>
          
           <li class="nav-item">
