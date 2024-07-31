@@ -1,8 +1,9 @@
-<div>
+<div class="vh-100">
     <div class="container  my-5 container-custom">
         <div class="row justify-content-center ">
             <div class="col-12 col-md-6   d-flex justify-content-center">
                 <div class="card card-custom" style="width: 18rem;">
+                    <img src="{{Storage::url($article->img)}}" class="card-img-top" alt="articolo inserito">
                     <div class="card-body d-flex a justify-content-center flex-column">
                     <h5 class="card-title">{{$article->title}}</h5>
                     <h6 class="card-subtitle mb-2 text-body-secondary">{{$article->subtitle}}</h6>
@@ -14,3 +15,4 @@
         </div>
    </div>
 </div>
+

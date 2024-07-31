@@ -7,11 +7,9 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active me-2" aria-current="page" href="/home">Home</a>
+            <a class="nav-link active me-2" aria-current="page" href="{{route('homepage')}}">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('posts')}}">Tutti i post</a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="{{route('articles.create')}}">Crea Articoli</a>
           </li>

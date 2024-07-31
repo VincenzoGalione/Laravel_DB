@@ -1,9 +1,4 @@
-.header{
-    height: 40vh;
-    background-color: rgb(22, 25, 223);
-    font-style: oblique;
-    color: rgb(0, 0, 0);
-}
+
 
 
 .card-custom{
@@ -13,4 +8,11 @@
 
 .ancor:hover{
     color: red;
+}
+
+.body{
+    background-image: url(../../public/sfondo4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

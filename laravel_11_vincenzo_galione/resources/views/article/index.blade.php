@@ -21,7 +21,7 @@
                     <div class="col-12 col-lg-4 col-md-6">
                         <div class="card my-3" style="width: 18rem;">
                             @if (!Storage::exists($article->img))
-                                <img src="public/img/default.webp" class="card-img-top" alt="immmagine di default">
+                                <img src="public/img" class="card-img-top" alt="immagine di default">
                             @else
                                 <img src="{{ Storage::url($article->img) }}" class="card-img-top"
                                 alt="prodotto inserito">
