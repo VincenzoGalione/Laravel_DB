@@ -11,7 +11,7 @@
             <h2>{{ $article->body}}</h2>
         </div>
         <div class="col-12 col-md-6">
-            <img src="{{$article->img ? Storage::url('$article->img') : 'https://picsum.photos/600'}}" alt="immagine articolo " class="mx-auto rounded shadow height-custom">
+            <img src="{{$article->img ? Storage::url($article->img) : 'https://picsum.photos/600'}}" alt="immagine articolo " class="mx-auto rounded shadow height-custom">
         </div>
     </div>
     @auth
